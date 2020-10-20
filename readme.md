@@ -3,7 +3,8 @@
  - 部分基础内容摘自：https://blog.csdn.net/szhiy/article/details/79996017
  - 增加内容：定时更新、安装及启停脚本
 
-** 一、解决环境依赖 **
+###  一、解决环境依赖   ###
+
 - Ubuntu 系统需要的依赖：
 ```shell
 sudo apt-get install libstdc++6:i386 libgcc1:i386 libcurl4-gnutls-dev:i386 lib32gcc1
@@ -13,14 +14,15 @@ sudo apt-get install libstdc++6:i386 libgcc1:i386 libcurl4-gnutls-dev:i386 lib32
 yum -y install glibc.i686 libstdc++.i686 libcurl4-gnutls-dev.i686 libcurl.i686
 ```
 
-** 二，创建专用用户 **
+### 二，创建专用用户 ###
+
  ```shell
 useradd steam
 password steam
 su steam
  ```
  注：相关脚本涉及根路径为/home/steam,不创建特定用户修改对应脚本路径也没问题
-** 二、安装 SteamCMD **
+### 二、安装 SteamCMD ###
 - 此目录用于 steam 程序的安装目录。
 ```shell
 mkdir ~/steamcmd
@@ -35,7 +37,7 @@ cd ~/steamcmd
 tar -xvzf ~/steamcmd/steamcmd_linux.tar.gz
 ```
 
-** 三、安装饥荒服务端 **
+### 三、安装饥荒服务端 ###
 - 准备好相关文件(暂时放到/home/steam目录)
   - cron_update_starve.sh：用于cron定时调度调度、进行服务器更新得的脚本
   - update_starve.cmd：用于下载饥荒服务器至指定目录
@@ -58,17 +60,17 @@ tar -xvzf ~/steamcmd/steamcmd_linux.tar.gz
  mv stop*  /home/steam/common/dstserver/bin
 ```
 
-** 四，准备游戏存档及mods **
+### 四，准备游戏存档及mods ###
 - 复制相关mods至/home/steam/common/dstserver/mods
 - 复制存档至/home/steam/.Klei\DoNotStarveTogether\Cluster_1
 
-** 五，解决一个 lib 缺失 **
+### 五，解决一个 lib 缺失 ###
 ```shell
 cd /home/steam/common/dstserver/bin/lib32
 ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 ```
 
-** 六，设置定时调度 **
+### 六，设置定时调度 ###
 - centos
 ```shell
   systemctl enable crond
@@ -79,7 +81,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
   crontab -e
 ```
 
-** 七、预期文件目录结构（仅保留核心内容） **
+### 七、预期文件目录结构（仅保留核心内容） ###
 - ├── common
 │   └── dstserver
 │       ├── bin
@@ -95,7 +97,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 ├── cron_update_starve.sh
 
 
-** 八、启动及验证 **
+### 八、启动及验证 ###
 - 启动
 ```shell
 /home/steam/common/dstserver/bin/start.sh
