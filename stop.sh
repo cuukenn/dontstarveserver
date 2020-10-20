@@ -1,4 +1,5 @@
 #!/bin/bash
+#author changgg
 pids=$(ps aux | grep dontstarve | awk -v OFS=',' '{print $2,$11}')
 array=(${pids// / })
 for var in ${array[@]}
