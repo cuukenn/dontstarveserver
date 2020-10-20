@@ -2,6 +2,7 @@
 注：
  - 部分基础内容摘自：https://blog.csdn.net/szhiy/article/details/79996017
  - 增加内容：定时更新、安装及启停脚本
+ - 内存不足增加swap分区参考：https://www.cnblogs.com/chentop/p/10330052.html
 
 ###  一、解决环境依赖   ###
 
