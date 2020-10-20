@@ -40,9 +40,9 @@ tar -xvzf ~/steamcmd/steamcmd_linux.tar.gz
 
 ### 三、安装饥荒服务端 ###
 - 准备好相关文件(暂时放到/home/steam目录)
-  - cron_update_starve.sh：用于cron定时调度调度、进行服务器更新得的脚本
-  - update_starve.cmd：用于下载饥荒服务器至指定目录
-  - update_starve.sh：steamcmd运行时实际命令
+  - cron_update_starve.sh：用于cron定时调度完成服务器更新的脚本
+  - update_starve.cmd：steamcmd运行时实际命令
+  - update_starve.sh：用于下载饥荒服务器至指定目录
   - start.sh：在后台启动地上地上服务器
   - start_master.sh：前台启动地上服务器
   - start_cave.sh：前台启动地下服务器
