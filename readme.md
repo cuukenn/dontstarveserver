@@ -77,7 +77,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
   systemctl enable crond
   systemctl start  crond
 ```
-  使用crontab -e后写入：0 0 3 * * /home/steam/cron_update_starve.sh，保存
+  使用crontab -e后写入：0 3 * * * /home/steam/cron_update_starve.sh，保存
 ```shell
   crontab -e
 ```
