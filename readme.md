@@ -97,7 +97,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
   └── update_starve.sh
   ├── cron_update_starve.sh
 
-  ![image](https://github.com/love390/dontstarveserver/images/目录.png)
+  ![image](https://github.com/love390/dontstarveserver/blob/main/images/%E7%9B%AE%E5%BD%95.png)
 
 
 ### 八、启动及验证 ###
