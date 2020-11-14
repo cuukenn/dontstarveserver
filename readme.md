@@ -84,18 +84,20 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 
 ### 七、预期文件目录结构（仅保留核心内容） ###
 - ├── common
-│   └── dstserver
-│       ├── bin
-│       │   ├── start_cave.sh
-│       │   ├── start_master.sh
-│       │   ├── start.sh
-│       │   ├── steam_appid.txt
-│       │   └── stop.sh
-├── steamcmd
-│   └── steamcmd.sh
-├── update_starve.cmd
-└── update_starve.sh
-├── cron_update_starve.sh
+  │   └── dstserver
+  │       ├── bin
+  │       │   ├── start_cave.sh
+  │       │   ├── start_master.sh
+  │       │   ├── start.sh
+  │       │   ├── steam_appid.txt
+  │       │   └── stop.sh
+  ├── steamcmd
+  │   └── steamcmd.sh
+  ├── update_starve.cmd
+  └── update_starve.sh
+  ├── cron_update_starve.sh
+
+  ![image](https://github.com/love390/dontstarveserver/images/目录.png)
 
 
 ### 八、启动及验证 ###
