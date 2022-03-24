@@ -83,7 +83,8 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 ```
 
 ### 七、预期文件目录结构（仅保留核心内容） ###
-- ├── common
+```palntext
+  ├── common
   │   └── dstserver
   │       ├── bin
   │       │   ├── start_cave.sh
@@ -96,6 +97,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
   ├── update_starve.cmd
   └── update_starve.sh
   ├── cron_update_starve.sh
+```
 
   ![image](https://github.com/love390/dontstarveserver/blob/main/images/%E7%9B%AE%E5%BD%95.png)
 
