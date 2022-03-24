@@ -49,7 +49,7 @@ tar -xvzf ~/steamcmd/steamcmd_linux.tar.gz
   - stop.sh：停止所有服务器
 - 赋予执行权限
 ```shell
- - chmod u+x *.sh
+chmod u+x *.sh
 ```
 - 启动安装脚本
 ```shell
@@ -57,8 +57,8 @@ tar -xvzf ~/steamcmd/steamcmd_linux.tar.gz
 ```
 - 移动启停脚本
 ```shell
- mv start* /home/steam/common/dstserver/bin
- mv stop*  /home/steam/common/dstserver/bin
+mv start* /home/steam/common/dstserver/bin
+mv stop*  /home/steam/common/dstserver/bin
 ```
 
 ### 四，准备游戏存档及mods ###
@@ -74,30 +74,32 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 ### 六，设置定时调度 ###
 - centos
 ```shell
-  systemctl enable crond
-  systemctl start  crond
+systemctl enable crond
+systemctl start  crond
 ```
   使用crontab -e后写入：0 3 * * * /home/steam/cron_update_starve.sh，保存
 ```shell
-  crontab -e
+crontab -e
 ```
 
 ### 七、预期文件目录结构（仅保留核心内容） ###
-- ├── common
-  │   └── dstserver
-  │       ├── bin
-  │       │   ├── start_cave.sh
-  │       │   ├── start_master.sh
-  │       │   ├── start.sh
-  │       │   ├── steam_appid.txt
-  │       │   └── stop.sh
-  ├── steamcmd
-  │   └── steamcmd.sh
-  ├── update_starve.cmd
-  └── update_starve.sh
-  ├── cron_update_starve.sh
+```plantext
+├── common
+│   └── dstserver
+│       ├── bin
+│       │   ├── start_cave.sh
+│       │   ├── start_master.sh
+│       │   ├── start.sh
+│       │   ├── steam_appid.txt
+│       │   └── stop.sh
+├── steamcmd
+│   └── steamcmd.sh
+├── update_starve.cmd
+└── update_starve.sh
+├── cron_update_starve.sh
+```
 
-  ![image](https://github.com/love390/dontstarveserver/blob/main/images/%E7%9B%AE%E5%BD%95.png)
+![image](https://github.com/love390/dontstarveserver/blob/main/images/%E7%9B%AE%E5%BD%95.png)
 
 
 ### 八、启动及验证 ###
