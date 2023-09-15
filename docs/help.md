@@ -63,7 +63,7 @@ mv stop*  /home/steam/common/dstserver/bin
 
 ### 四，准备游戏存档及mods ###
 - 复制相关mods至/home/steam/common/dstserver/mods
-- 复制存档至/home/steam/.Klei\DoNotStarveTogether\Cluster_1
+- 复制存档至/home/steam/.klei\DoNotStarveTogether\Cluster_1
 
 ### 五，解决一个 lib 缺失 ###
 ```shell

@@ -15,9 +15,7 @@ git clone https://github.com/cuukenn/dontstarveserver.git
 ## 安装
 
 ```
-chmod u+x *.sh
-chmod u+x scripts/*.sh
-./setup.sh
+sh setup.sh
 ```
 
 ## 准备

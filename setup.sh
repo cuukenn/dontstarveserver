@@ -1,12 +1,5 @@
 #!/bin/bash
 #author cuukenn
-set -e
-
-bin=$(dirname "$0")
-bin=$(
-    cd "${bin}"
-    pwd
-)
 
 #加载配置文件
 setup_config() {
@@ -44,7 +37,7 @@ setup_sys_env() {
     check_system
     local script="scripts/setup-sys-${release}_$(getconf LONG_BIT).sh"
     if [ -f $script ]; then
-        $script
+        sh $script
     else
         echo "暂不支持该系统，直接退出"
         exit -1
@@ -80,10 +73,12 @@ setup_scripts() {
     cp -r ./* ${targetPath}
     find ${targetPath} -name \*.sh -print | xargs -n 1 chmod u+x
     chown -R ${STEAMCMD_USERNAME} ${targetPath}
+    mkdir -p $DST_RUN_PATH
+    chown -R ${STEAMCMD_USERNAME} ${DST_RUN_PATH}
 }
 
 setup_dstserver() {
-    su - ${STEAMCMD_USERNAME} -c "~/$DST_SCRIPT_PATH/scripts/setup-dst.sh $STEAMCMD_PATH $DST_SCRIPT_PATH $DST_SERVER_PATH $DST_GAME_ID"
+    su - ${STEAMCMD_USERNAME} -c "sh ~/$DST_SCRIPT_PATH/scripts/setup-dst.sh $STEAMCMD_PATH $DST_SCRIPT_PATH $DST_SERVER_PATH $DST_GAME_ID"
 }
 
 print_info() {
@@ -109,6 +104,8 @@ print_info() {
     echo ""
 }
 
+cd $(dirname $0)
+bin=$(pwd)
 setup_config
 setup_sys_env
 setup_user

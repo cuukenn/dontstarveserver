@@ -1,11 +1,10 @@
 #!/bin/bash
 #author cuukenn
-pids=$(ps aux | grep dontstarve | awk -v OFS=',' '{print $2,$11}')
-array=(${pids// / })
-for var in ${array[@]}; do
-    item=(${var//,/ })
-    result=$(echo ${item[1]} | grep dontstarve)
-    if [[ "$result" != "" ]]; then
-        rs=$(kill -9 ${item[0]})
-    fi
-done
+
+cd $(dirname $0)
+bin=$(pwd)
+source config/config.properties
+
+cat /dev/null >.lastpid
+sh scripts/dst-stop.sh Master $DST_CLUSTER_NAME
+sh scripts/dst-stop.sh Caves $DST_CLUSTER_NAME
